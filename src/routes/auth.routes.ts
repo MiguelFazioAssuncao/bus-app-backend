@@ -7,4 +7,6 @@ router.post("/", async (req, res) => {
     await AuthController.login(req, res);
 });
 
+router.get
+
 export default router;
