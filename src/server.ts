@@ -4,6 +4,9 @@ import userRoutes from "./routes/user.routes";
 import authRoutes from "./routes/auth.routes";
 import passwordRoutes from "./routes/password.routes";
 import google from "./routes/google.routes";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
