@@ -1,18 +1,27 @@
 import express from "express";
+import cors from "cors";
 import userRoutes from "./routes/user.routes";
 import authRoutes from "./routes/auth.routes";
+import passwordRoutes from "./routes/password.routes";
+import google from "./routes/google.routes";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.use("/users", userRoutes);   
 app.use("/login", authRoutes);
+app.use("/password", passwordRoutes);
+app.use("/auth", google)
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server listening in http://localhost:${PORT}`);
+  console.log(`🚀 Server listening http://localhost:${PORT}`);
 });
 
 export default app;
